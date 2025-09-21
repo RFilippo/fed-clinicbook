@@ -1,0 +1,16 @@
+{
+  "/api/appointments": {
+    "target": "http://localhost:8081",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": { "^/api/appointments": "" }
+  },
+  "/api/clinics": {
+    "target": "http://localhost:8082",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": { "^/api/clinics": "" }
+  }
+}
