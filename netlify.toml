@@ -1,0 +1,23 @@
+[build]
+  command = "ng build --configuration=production"
+  # você está usando o plugin Angular Runtime do Netlify
+  publish = "dist/fed-clinicbook/browser"
+
+# SPA redirect (rotas do Angular)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Proxy de produção para os SRVs do Render
+[[redirects]]
+  from = "/api/appointments/*"
+  to = "https://srv-appointments.onrender.com/:splat"  # <-- troque para a URL do Render
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/clinics/*"
+  to = "https://srv-clinics.onrender.com/:splat"       # <-- troque para a URL do Render
+  status = 200
+  force = true
